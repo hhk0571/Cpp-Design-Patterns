@@ -10,11 +10,11 @@ class FileSplitter
 	string m_filePath;
 	int m_fileNumber;
 
-	List<IProgress*>  m_iprogressList; // ³éÏóÍ¨Öª»úÖÆ£¬Ö§³Ö¶à¸ö¹Û²ìÕß
-	
+	List<IProgress*>  m_iprogressList; // æŠ½è±¡é€šçŸ¥æœºåˆ¶ï¼Œæ”¯æŒå¤šä¸ªè§‚å¯Ÿè€…
+
 public:
 	FileSplitter(const string& filePath, int fileNumber) :
-		m_filePath(filePath), 
+		m_filePath(filePath),
 		m_fileNumber(fileNumber){
 
 	}
@@ -22,15 +22,15 @@ public:
 
 	void split(){
 
-		//1.¶ÁÈ¡´óÎÄ¼ş
+		//1.è¯»å–å¤§æ–‡ä»¶
 
-		//2.·ÖÅú´ÎÏòĞ¡ÎÄ¼şÖĞĞ´Èë
+		//2.åˆ†æ‰¹æ¬¡å‘å°æ–‡ä»¶ä¸­å†™å…¥
 		for (int i = 0; i < m_fileNumber; i++){
 			//...
 
 			float progressValue = m_fileNumber;
 			progressValue = (i + 1) / progressValue;
-			onProgress(progressValue);//·¢ËÍÍ¨Öª
+			onProgress(progressValue);//å‘é€é€šçŸ¥
 		}
 
 	}
@@ -47,11 +47,11 @@ public:
 
 protected:
 	virtual void onProgress(float value){
-		
+
 		List<IProgress*>::iterator itor=m_iprogressList.begin();
 
 		while (itor != m_iprogressList.end() )
-			(*itor)->DoProgress(value); //¸üĞÂ½ø¶ÈÌõ
+			(*itor)->DoProgress(value); //æ›´æ–°è¿›åº¦æ¡
 			itor++;
 		}
 	}

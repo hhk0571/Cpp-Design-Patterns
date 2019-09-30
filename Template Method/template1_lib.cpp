@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//����⿪����Ա
+//程序库开发人员
 class Library
 {
 

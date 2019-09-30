@@ -3,20 +3,20 @@
 
 using namespace std;
 
-//Ó¦ÓÃ³ÌĞò¿ª·¢ÈËÔ±
+//åº”ç”¨ç¨‹åºå¼€å‘äººå‘˜
 class Application : public Library
 {
   protected:
 	virtual bool Step2()
 	{
-		//... ×ÓÀàÖØĞ´ÊµÏÖ
+		//... å­ç±»é‡å†™å®ç°
 		cout << "override Step2" << endl;
 		return true;
 	}
 
 	virtual void Step4()
 	{
-		//... ×ÓÀàÖØĞ´ÊµÏÖ
+		//... å­ç±»é‡å†™å®ç°
 		cout << "override Step4" << endl;
 	}
 };

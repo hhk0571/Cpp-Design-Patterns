@@ -6,7 +6,7 @@ class FileSplitter
 
 public:
 	FileSplitter(const string& filePath, int fileNumber, ProgressBar* progressBar) :
-		m_filePath(filePath), 
+		m_filePath(filePath),
 		m_fileNumber(fileNumber),
 		m_progressBar(progressBar){
 
@@ -14,9 +14,9 @@ public:
 
 	void split(){
 
-		//1.¶ÁÈ¡´óÎÄ¼ş
+		//1.è¯»å–å¤§æ–‡ä»¶
 
-		//2.·ÖÅú´ÎÏòĞ¡ÎÄ¼şÖĞĞ´Èë
+		//2.åˆ†æ‰¹æ¬¡å‘å°æ–‡ä»¶ä¸­å†™å…¥
 		for (int i = 0; i < m_fileNumber; i++){
 			//...
 			float progressValue = m_fileNumber;

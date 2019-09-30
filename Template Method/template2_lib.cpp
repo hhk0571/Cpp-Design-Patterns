@@ -2,23 +2,23 @@
 
 using namespace std;
 
-//³ÌĞò¿â¿ª·¢ÈËÔ±
+//ç¨‹åºåº“å¼€å‘äººå‘˜
 class Library
 {
   public:
-    //ÎÈ¶¨ template method
+    //ç¨³å®š template method
     void Run()
     {
         Step1();
 
         if (Step2())
-        { //Ö§³Ö±ä»¯ ==> Ğéº¯ÊıµÄ¶àÌ¬µ÷ÓÃ
+        { //æ”¯æŒå˜åŒ– ==> è™šå‡½æ•°çš„å¤šæ€è°ƒç”¨
             Step3();
         }
 
         for (int i = 0; i < 4; i++)
         {
-            Step4(); //Ö§³Ö±ä»¯ ==> Ğéº¯ÊıµÄ¶àÌ¬µ÷ÓÃ
+            Step4(); //æ”¯æŒå˜åŒ– ==> è™šå‡½æ•°çš„å¤šæ€è°ƒç”¨
         }
 
         Step5();
@@ -27,18 +27,18 @@ class Library
 
   protected:
     void Step1()
-    { //ÎÈ¶¨
+    { //ç¨³å®š
         cout << "Step1" << endl;
     }
     void Step3()
-    { //ÎÈ¶¨
+    { //ç¨³å®š
         cout << "Step3" << endl;
     }
     void Step5()
-    {   //ÎÈ¶¨
+    {   //ç¨³å®š
         cout << "Step5" << endl;
     }
 
-    virtual bool Step2() = 0; //±ä»¯
-    virtual void Step4() = 0; //±ä»¯
+    virtual bool Step2() = 0; //å˜åŒ–
+    virtual void Step4() = 0; //å˜åŒ–
 };

@@ -13,26 +13,26 @@ private:
     float humidity;
     std::shared_ptr<Subject> weatherData;
 public:
-    CurrentConditionsDisplay(std::shared_ptr<Subject> w) : 
+    CurrentConditionsDisplay(std::shared_ptr<Subject> w) :
         temperature(0.0f), humidity(0.0f), weatherData(std::move(w)) {
     }
 
-    void registerObserver() {
+    void registerObserver() { // func naming is not good, overloap with method of Subject class
         weatherData->registerObserver(this);
     }
 
     ~CurrentConditionsDisplay() {
-        weatherData->registerObserver(this);
+        weatherData->removeObserver(this);
     }
 
-    void update(float t, float h, float p) {
+    void update(float t, float h, float p) override {
         temperature = t;
         humidity = h;
         display();
     }
 
-    void display() {
-        std::cout << "Current condidions: " << temperature << "F degrees and " 
+    void display() override {
+        std::cout << "Current condidions: " << temperature << "F degrees and "
             << humidity << "% humidity" << std::endl;
     }
 };
