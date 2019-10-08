@@ -7,7 +7,7 @@
 
 class FlyNoWay : public FlyBehavior {
 public:
-    void fly() {
+    void fly() override {
         std::cout << "I can't fly" << std::endl;
     }
 };

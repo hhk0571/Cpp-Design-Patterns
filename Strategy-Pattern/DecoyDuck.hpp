@@ -7,7 +7,7 @@ class DecoyDuck : public Duck {
 public:
     DecoyDuck();
 
-    void display();
+    void display() override;
 };
 
 #endif

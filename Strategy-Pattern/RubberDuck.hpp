@@ -7,7 +7,7 @@ class RubberDuck : public Duck {
 public:
     RubberDuck();
 
-    void display();
+    void display() override;
 };
 
 #endif

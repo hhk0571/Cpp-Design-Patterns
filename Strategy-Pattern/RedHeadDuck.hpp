@@ -7,7 +7,7 @@ class RedHeadDuck : public Duck {
 public:
     RedHeadDuck();
 
-    void display();
+    void display() override;
 };
 
 #endif

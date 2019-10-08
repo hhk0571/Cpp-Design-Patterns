@@ -7,7 +7,7 @@
 
 class FlyWithWings : public FlyBehavior {
 public:
-    void fly() {
+    void fly() override {
         std::cout << "I'm flying" << std::endl;
     }
 };

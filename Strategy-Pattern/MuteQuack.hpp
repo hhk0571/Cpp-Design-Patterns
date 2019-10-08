@@ -7,7 +7,7 @@
 
 class MuteQuack : public QuackBehavior {
 public:
-    void quack() {
+    void quack() override {
         std::cout << "Mute Quack" << std::endl;
     }
 };

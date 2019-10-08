@@ -7,7 +7,7 @@
 
 class ChicagoPizzaStore : public PizzaStore {
 public:
-    std::unique_ptr<Pizza> createPizza(std::string type) {
+    std::unique_ptr<Pizza> createPizza(std::string type) override {
         std::unique_ptr<Pizza> pizza = nullptr;
 
         if (type == "cheese")

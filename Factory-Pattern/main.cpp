@@ -8,7 +8,7 @@ int main()
     auto nyStore = new NYPizzaStore();
     auto chicagoStore = new ChicagoPizzaStore();
 
-    auto nyCheese = nyStore->orderPizza("cheese");
+    auto nyCheese = nyStore->orderPizza("pepperoni");
     auto chicagoCheese = chicagoStore->orderPizza("cheese");
 
     return 0;

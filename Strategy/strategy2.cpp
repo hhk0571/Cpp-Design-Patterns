@@ -1,5 +1,5 @@
 
-class TaxStrategy{
+class TaxStrategy{ // interface class
 public:
     virtual double Calculate(const Context& context)=0;
     virtual ~TaxStrategy(){}
@@ -29,7 +29,7 @@ public:
 
 
 
-//À©Õ¹
+//æ‰©å±•
 //*********************************
 class FRTax : public TaxStrategy{
 public:
@@ -44,7 +44,7 @@ private:
     TaxStrategy* strategy;
 
 public:
-    // ¹¤³§Ä£Ê½
+    // å·¥å‚æ¨¡å¼
     SalesOrder(StrategyFactory* strategyFactory){
         this->strategy = strategyFactory->NewStrategy();
     }
@@ -55,10 +55,10 @@ public:
     public double CalculateTax(){
         //...
         Context context();
-        
-        double val = 
-            strategy->Calculate(context); //¶àÌ¬µ÷ÓÃ
+
+        double val =
+            strategy->Calculate(context); //å¤šæ€è°ƒç”¨
         //...
     }
-    
+
 };
