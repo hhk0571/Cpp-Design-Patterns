@@ -41,9 +41,16 @@ Singleton* Singleton::getInstance() {
 
 
 
-//双检查锁，但由于内存读写reorder不安全
+/* 双检查锁，但由于内存读写reorder不安全
+内存读写分为三步:
+	1. 分配内存
+	2. 调用构造器
+	3. 将返回指针赋值
+但是CPU层面会进行reorder, 顺序变为1, 3, 2, 这样的话, 当第一个线程给m_instance 赋值之后,
+第二线程一进来就拿到m_instance, 但此时m_instance还在构造中, 还不能用.
+*/
 Singleton* Singleton::getInstance() {
-    
+
     if(m_instance==nullptr){
         Lock lock;
         if (m_instance == nullptr) {
