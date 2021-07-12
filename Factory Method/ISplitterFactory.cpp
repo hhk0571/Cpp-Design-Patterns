@@ -1,5 +1,5 @@
 
-//抽象类
+//产品抽象类
 class ISplitter{
 public:
     virtual void split()=0;
@@ -7,7 +7,7 @@ public:
 };
 
 
-//工厂基类
+//产品工厂基类
 class SplitterFactory{
 public:
     virtual ISplitter* CreateSplitter()=0;

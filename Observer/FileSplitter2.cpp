@@ -46,13 +46,19 @@ public:
 
 
 protected:
-	virtual void onProgress(float value){
+	virtual void onProgress(float value) {
 
-		List<IProgress*>::iterator itor=m_iprogressList.begin();
+		// List<IProgress*>::iterator itor=m_iprogressList.begin();
 
-		while (itor != m_iprogressList.end() )
-			(*itor)->DoProgress(value); //更新进度条
-			itor++;
+		// while (itor != m_iprogressList.end() ) {
+		// 	(*itor)->DoProgress(value); //更新进度条
+		// 	itor++;
+		// }
+
+		for (auto &&elem : m_iprogressList)
+		{
+			elem->DoProgress(value);
 		}
+
 	}
 };

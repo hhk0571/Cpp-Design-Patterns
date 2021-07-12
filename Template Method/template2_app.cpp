@@ -1,5 +1,6 @@
 #include "template2_lib.cpp"
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -7,14 +8,14 @@ using namespace std;
 class Application : public Library
 {
   protected:
-	virtual bool Step2()
+	virtual bool Step2() override
 	{
 		//... 子类重写实现
 		cout << "override Step2" << endl;
 		return true;
 	}
 
-	virtual void Step4()
+	virtual void Step4() override
 	{
 		//... 子类重写实现
 		cout << "override Step4" << endl;
@@ -23,8 +24,9 @@ class Application : public Library
 
 int main()
 {
-	Library *pLib = new Application();
+	// auto pLib = make_unique<Application>();
+	unique_ptr<Library> pLib = make_unique<Application>();
+	// Library *pLib = new Application();
 	pLib->Run();
-
-	delete pLib;
+	// delete pLib;
 }
